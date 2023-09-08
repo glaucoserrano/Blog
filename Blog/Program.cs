@@ -1,4 +1,5 @@
 using Blog.Data;
+using Blog.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services
     {
         options.SuppressModelStateInvalidFilter = true;
     });
+
+builder.Services.AddTransient<TokenService>();
 
 builder.Services.AddDbContext<BlogDataContext>();
 
